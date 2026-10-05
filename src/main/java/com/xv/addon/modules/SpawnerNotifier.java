@@ -40,7 +40,7 @@ public class SpawnerNotifier extends Module {
     private void onChunkData(ChunkDataEvent event) {
         if (mc.player == null) return;
 
-        for (BlockEntity be : event.chunk.getBlockEntities().values()) {
+        for (BlockEntity be : event.chunk().getBlockEntities().values()) {
             if (!(be instanceof MobSpawnerBlockEntity)) continue;
 
             BlockPos pos = be.getPos().toImmutable();
